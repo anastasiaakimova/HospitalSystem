@@ -68,5 +68,4 @@ public class Person {
         this.allergy = allergy;
     }
 
-
 }
