@@ -1,5 +1,7 @@
 package com.company;
-
+/*
+ * created by anastasiaakimova
+ */
 public enum Department {
     PARAMEDIC("PM"), SURGERY("SG"), RESUSCITATION("RS"),
     GYNECOLOGY("GN"), CARDIOLOGY("CR"), NEUROLOGY("NE"),

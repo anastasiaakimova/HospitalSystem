@@ -1,6 +1,7 @@
 package com.company;
-
-//Врач может сделать Назначение Пациенту (процедуры, лекарства, операции).
+/*
+ * created by anastasiaakimova
+ */
 public class Doctor {
     private String name;
     private Department department;

@@ -1,7 +1,7 @@
 package com.company;
-
-//Медсестра или другой Врач выполняют назначение.
-
+/*
+ * created by anastasiaakimova
+ */
 public class Nurse extends Doctor {
     public Nurse(String name, Department department) {
         super(name, department);

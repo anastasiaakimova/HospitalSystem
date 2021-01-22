@@ -1,5 +1,7 @@
 package com.company;
-
+/*
+ * created by anastasiaakimova
+ */
 import java.util.Scanner;
 
 public class Main {

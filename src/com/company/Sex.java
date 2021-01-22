@@ -1,5 +1,7 @@
 package com.company;
-
+/*
+ * created by anastasiaakimova
+ */
 public enum Sex {
     MALE("M"), FEMALE("F");
 

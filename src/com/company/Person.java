@@ -1,5 +1,7 @@
 package com.company;
-
+/*
+ * created by anastasiaakimova
+ */
 public class Person {
     private long id;
     private long generator;
