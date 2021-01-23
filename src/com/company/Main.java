@@ -46,6 +46,25 @@ public class Main {
             System.out.println("6. " + klara.toString());
             System.out.println("7. " + victoria.toString());
 
+            boolean exitOfChoice = false;
+            String doctorName = "";
+            String nurseName = "";
+            int numOfDoctor;
+            while(exitOfChoice == false){
+                numOfDoctor = new Scanner(System.in).nextInt();
+                switch(numOfDoctor){
+                    case 1 :{
+                        System.out.println("Вы выбрали врача:" + pavel.getName());
+                        System.out.println("Ему ассистирует медсестра" + daria.getName());
+                        exitOfChoice = true;
+                        doctorName = pavel.getName();
+                        nurseName = daria.getName();
+                        break;
+                    }
+
+                }
+            }
+
         }
     }
 
