@@ -1,12 +1,16 @@
 package com.company;
-/*
- * created by anastasiaakimova
+
+/**
+ * @author Anastaia Akimova
  */
 public class Doctor {
+    private long id;
+    private long doctorGenerator;
     private String name;
     private Department department;
 
     public Doctor(String name, Department department) {
+        id = doctorGenerator++;
         this.name = name;
         this.department = department;
     }
@@ -29,31 +33,33 @@ public class Doctor {
 
     @Override
     public String toString() {
-        return "Имя='" + name + '\'' +
-                ", отдел=" + department +
-                '}';
+        return " имя: " + name + '\n' +
+                " отдел: " + department;
     }
 
-    //назначены
-    public static void scheduleOperation() {
-
-    }
-
-    public static void scheduleMedicine() {
+    //planned
+    public void scheduleOperation(Person person, Operation operation) {
+        System.out.println("Доктор " + getName() + " назначил операцию " + Operation.getName()
+                + " для " + person.getName());
 
     }
 
-    public static void scheduleProcedure() {
-
-    }
-    //совершена операция
-
-    public static void doOperation() {
-
+    public void scheduleMedicine(Person person) {
+        System.out.println("Доктор " + getName() + " назначил курс препоратов " + " для " + person.getName());
     }
 
-    // пациент выписан
-    public static void goOut() {
+    public void scheduleProcedure(Person person) {
+        System.out.println("Доктор " + getName() + " назначил процедуру " + " для " + person.getName());
+    }
 
+    //doctor did  the operation
+    public void doOperation(Person person) {
+        System.out.println("Доктор " + getName() + " провел операцию " + Operation.getName() +
+                " для: " + person.getName());
+    }
+
+    // patient is free
+    public void goOut(Person person) {
+        System.out.println("Доктор " + getName() + " выписал " + person.getName());
     }
 }

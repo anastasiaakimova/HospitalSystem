@@ -1,6 +1,19 @@
 package com.company;
-/*
- * created by anastasiaakimova
+
+/**
+ * @author Anastaia Akimova
  */
-public enum Operation {
+public class Operation {
+    private static String name;
+
+    public Operation() {
+    }
+
+    public static String getName() {
+        return name;
+    }
+
+    public static void setName(String name) {
+        Operation.name = name;
+    }
 }

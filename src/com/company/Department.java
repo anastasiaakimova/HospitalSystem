@@ -1,6 +1,7 @@
 package com.company;
-/*
- * created by anastasiaakimova
+
+/**
+ * @author Anastaia Akimova
  */
 public enum Department {
     PARAMEDIC("PM"), SURGERY("SG"), RESUSCITATION("RS"),

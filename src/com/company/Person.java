@@ -1,18 +1,19 @@
 package com.company;
-/*
- * created by anastasiaakimova
+
+/**
+ * @author Anastaia Akimova
  */
 public class Person {
     private long id;
-    private long generator;
+    private long PersonGenerator;
     private String name;
     private int age;
     private String complaints;
     private String doctor;
     private String allergy;
 
-    public Person(long id, String name, int age, String complaints, String doctor, String allergy) {
-        this.id = generator++;
+    public Person(String name, int age, String complaints, String doctor, String allergy) {
+        this.id = PersonGenerator++;
         this.name = name;
         this.age = age;
         this.complaints = complaints;

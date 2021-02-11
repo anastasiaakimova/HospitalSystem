@@ -1,17 +1,17 @@
 package com.company;
-/*
- * created by anastasiaakimova
+/**
+ * @author Anastaia Akimova
  */
 public enum Sex {
     MALE("M"), FEMALE("F");
 
-    private String abbrevitation;
+    private String abbreviation;
 
-    public String getAbbrevitation() {
-        return abbrevitation;
+    public String getAbbreviation() {
+        return abbreviation;
     }
 
-    Sex(String abbrevitation) {
-        this.abbrevitation = abbrevitation;
+    Sex(String abbreviation) {
+        this.abbreviation = abbreviation;
     }
 }
