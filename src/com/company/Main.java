@@ -34,9 +34,12 @@ public class Main {
             System.out.println("Ведите возраст пациента:");
             int age = 0;
             boolean inputError = true;
+
             while (inputError) {
                 try {
                     age = new Scanner(System.in).nextInt();
+                    inputError = false;
+
                 } catch (NumberFormatException e) {
                     inputError = true;
                     System.out.println("Введите число!");
@@ -45,7 +48,6 @@ public class Main {
                     System.out.println("Введите число!");
                 }
             }
-
 
             System.out.println("Укажите болезнь или жалобы " + name + ":");
             String complaints = new Scanner(System.in).nextLine();
@@ -137,19 +139,51 @@ public class Main {
                 }
             }
             double rand = 1 + Math.random() * 100;
-            switch (doctorName) {
-                case "Павел": {
+            switch (numOfDoctor) {
+                case 1: {
                     //code for doctor pavel
                     Person person = new Person(name, age, complaints, pavel.getName(), allergy);
                     pavel.scheduleMedicine(person);
                     pavel.scheduleProcedure(person);
+                    if (rand <= 50) {
+                        daria.doProcedure(person);
+                    } else {
+                        daria.doMedicine(person);
+                    }
+                    if (rand <= 30) {
+                        System.out.println("Пациент выздоровел");
+                        pavel.goOut(person);
+                    } else {
+                        System.out.println("Пациент нарушал режим");
+                        pavel.goOut(person);
+                    }
+                    break;
                 }
-                //code for Doctor maria
-                //code for Doctor natalia
-                //code for Doctor victor
-                //code for Doctor daniel
-                //code for Doctor klara
-                //code for Doctor victoria
+                case 2: {
+                    //code for doctor maria
+                    Person person = new Person(name, age, complaints, pavel.getName(), allergy);
+                    maria.scheduleMedicine(person);
+                    maria.scheduleProcedure(person);
+                    break;
+                }
+                case 3: {
+//code for Doctor natalia
+                }
+                case 4: {
+                    //code for Doctor victor
+                }
+                case 5: {
+                    //code for Doctor daniel
+                }
+
+                case 6: {
+                    //code for Doctor klara
+                }
+
+
+                case 7: {
+                    //code for Doctor victoria
+                }
                 break;
                 default:
                     throw new IllegalStateException("Unexpected value: " + doctorName);
