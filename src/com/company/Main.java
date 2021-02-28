@@ -3,6 +3,7 @@ package com.company;
  * @author Anastaia Akimova
  */
 
+import java.io.FileWriter;
 import java.util.Scanner;
 import java.io.IOException;
 import java.util.InputMismatchException;
@@ -126,10 +127,10 @@ public class Main {
                     }
                     case 7: {
                         System.out.println("Вы выбрали врача:" + victoria.getName());
-                        System.out.println("Ему ассистирует медсестра " + marina.getName());
+                        System.out.println("Ему ассистирует медсестра " + elena.getName());
                         exitOfChoice = true;
                         doctorName = maria.getName();
-                        nurseName = marina.getName();
+                        nurseName = elena.getName();
                         break;
                     }
                     default: {
@@ -157,6 +158,7 @@ public class Main {
                         System.out.println("Пациент нарушал режим");
                         pavel.goOut(person);
                     }
+                    writeFile(person);
                     break;
                 }
                 case 2: {
@@ -164,36 +166,139 @@ public class Main {
                     Person person = new Person(name, age, complaints, pavel.getName(), allergy);
                     maria.scheduleMedicine(person);
                     maria.scheduleProcedure(person);
+                    if (rand <= 50) {
+                        daria.doProcedure(person);
+                    } else {
+                        daria.doMedicine(person);
+                    }
+                    if (rand <= 30) {
+                        System.out.println("Пациент выздоровел");
+                        maria.goOut(person);
+                    } else {
+                        System.out.println("Пациент нарушал режим");
+                        maria.goOut(person);
+                    }
+                    writeFile(person);
                     break;
                 }
                 case 3: {
-//code for Doctor natalia
+                    //code for Doctor natalia
+                    Person person = new Person(name, age, complaints, pavel.getName(), allergy);
+                    natalia.scheduleMedicine(person);
+                    natalia.scheduleProcedure(person);
+                    if (rand <= 50) {
+                        daria.doProcedure(person);
+                    } else {
+                        daria.doMedicine(person);
+                    }
+                    if (rand <= 30) {
+                        System.out.println("Пациент выздоровел");
+                        natalia.goOut(person);
+                    } else {
+                        System.out.println("Пациент нарушал режим");
+                        natalia.goOut(person);
+                    }
+                    writeFile(person);
+                    break;
                 }
                 case 4: {
                     //code for Doctor victor
+                    Person person = new Person(name, age, complaints, pavel.getName(), allergy);
+                    victor.scheduleMedicine(person);
+                    victor.scheduleProcedure(person);
+                    if (rand <= 50) {
+                        daria.doProcedure(person);
+                    } else {
+                        daria.doMedicine(person);
+                    }
+                    if (rand <= 30) {
+                        System.out.println("Пациент выздоровел");
+                        victor.goOut(person);
+                    } else {
+                        System.out.println("Пациент нарушал режим");
+                        victor.goOut(person);
+                    }
+                    writeFile(person);
+                    break;
                 }
                 case 5: {
                     //code for Doctor daniel
+                    Person person = new Person(name, age, complaints, pavel.getName(), allergy);
+                    daniel.scheduleMedicine(person);
+                    daniel.scheduleProcedure(person);
+                    if (rand <= 50) {
+                        marina.doProcedure(person);
+                    } else {
+                        marina.doMedicine(person);
+                    }
+                    if (rand <= 30) {
+                        System.out.println("Пациент выздоровел");
+                        daniel.goOut(person);
+                    } else {
+                        System.out.println("Пациент нарушал режим");
+                        daniel.goOut(person);
+                    }
+                    writeFile(person);
+                    break;
                 }
-
                 case 6: {
                     //code for Doctor klara
+                    Person person = new Person(name, age, complaints, pavel.getName(), allergy);
+                    klara.scheduleMedicine(person);
+                    klara.scheduleProcedure(person);
+                    if (rand <= 50) {
+                        elena.doProcedure(person);
+                    } else {
+                        elena.doMedicine(person);
+                    }
+                    if (rand <= 30) {
+                        System.out.println("Пациент выздоровел");
+                        klara.goOut(person);
+                    } else {
+                        System.out.println("Пациент нарушал режим");
+                        klara.goOut(person);
+                    }
+                    writeFile(person);
+                    break;
                 }
-
-
                 case 7: {
                     //code for Doctor victoria
+                    Person person = new Person(name, age, complaints, pavel.getName(), allergy);
+                    victoria.scheduleMedicine(person);
+                    victoria.scheduleProcedure(person);
+                    if (rand <= 50) {
+                        elena.doProcedure(person);
+                    } else {
+                        elena.doMedicine(person);
+                    }
+                    if (rand <= 30) {
+                        System.out.println("Пациент выздоровел");
+                        victoria.goOut(person);
+                    } else {
+                        System.out.println("Пациент нарушал режим");
+                        victoria.goOut(person);
+                    }
+                    writeFile(person);
+                    break;
                 }
-                break;
                 default:
                     throw new IllegalStateException("Unexpected value: " + doctorName);
             }
-
         }
     }
 
     public static void sayHello() {
         System.out.println("ВАС ПРИВЕТСТВУЕТ СИСТЕМА НАШЕЙ БОЛЬНИЦЫ!");
         System.out.println("Приступить к созданию карточки пациента: ");
+    }
+
+    public static void writeFile(Person person) {
+        try (FileWriter writer = new FileWriter("patientArchive/" + person.getName() + ".txt", false)) {
+            writer.write("Данные: " + person.getName());
+            writer.write(person.toString());
+            writer.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

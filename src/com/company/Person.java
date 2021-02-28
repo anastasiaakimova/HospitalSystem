@@ -25,9 +25,9 @@ public class Person {
     public String toString() {
         return "\n Номер пациента:" + id +
                 "\n Имя:" + name +
-                "\n Возраст:" + age +
-                "\n Жалобы:" + complaints +
-                "\n Лечащий врач" + doctor +
+                "\n Возраст: " + age +
+                "\n Жалобы: " + complaints +
+                "\n Лечащий врач: " + doctor +
                 "\n Аллергия: " + allergy;
     }
 
